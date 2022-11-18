@@ -145,7 +145,7 @@ export default function AddImovel({
     console.log("singleimovel: ", singleSubscription);
     try {
       if (singleSubscription) {
-        await axios.patch(`http://localhost:5000/imovel/${imovel.MATRICULA}`, {
+        await axios.patch(`186.148.230.186:5000/imovel/${imovel.MATRICULA}`, {
           MATRICULA: imovel.MATRICULA,
           LOCALIDADE: imovel.LOCALIDADE,
           SETOR: parseInt(setor),
@@ -157,17 +157,14 @@ export default function AddImovel({
 
           ID_LOGRADOURO: imovel.ID_LOGRADOURO,
         });
-        await axios.patch(
-          `http://localhost:5000/endereco/${imovel.MATRICULA}`,
-          {
-            BAIRRO: bairro,
-            CEP: cep,
-            LOGRADOURO: nome_logradouro,
-            NUM_IMOVEL: parseInt(num_imovel),
-            TIPO_LOGRADOURO: tipo_logradouro,
-            ID_LOGRADOURO: imovel.ID_LOGRADOURO,
-          }
-        );
+        await axios.patch(`186.148.230.186/endereco/${imovel.MATRICULA}`, {
+          BAIRRO: bairro,
+          CEP: cep,
+          LOGRADOURO: nome_logradouro,
+          NUM_IMOVEL: parseInt(num_imovel),
+          TIPO_LOGRADOURO: tipo_logradouro,
+          ID_LOGRADOURO: imovel.ID_LOGRADOURO,
+        });
 
         toast.success(
           `Imóvel de matrícula ${imovel.MATRICULA} atualizado com sucesso!`

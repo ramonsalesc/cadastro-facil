@@ -95,7 +95,7 @@ export default function ApiMap() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/imovel")
+      .get("186.148.230.186:5000/imovel")
       .then(({ data }) => {
         setImoveisData(data);
         console.log("dentro do useefect");

@@ -169,7 +169,7 @@ export default function AddImovel({
           });
         console.log("LASTIMOVEL:", matriculaLastImovel);
 
-        await axios.post(`${process.env.REACT_APP_API_URL!}/imovel/`, {
+        await axios.post(`186.148.230.186/imovel/`, {
           MATRICULA: matriculaLastImovel,
           LOCALIDADE: imovel.LOCALIDADE,
           SETOR: parseInt(setor),
@@ -182,7 +182,7 @@ export default function AddImovel({
           COORDENADAY: coordinates?.coordinatesLng,
           ID_LOGRADOURO: imovel.ID_LOGRADOURO,
         });
-        await axios.post(`${process.env.REACT_APP_API_URL!}/endereco/`, {
+        await axios.post(`186.148.230.186/endereco/`, {
           MATRICULA: matriculaLastImovel,
           BAIRRO: bairro,
           CEP: cep,

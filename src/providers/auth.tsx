@@ -46,13 +46,10 @@ export const AuthProvider = ({ children }: RoutesProps) => {
 
   const login = async (MATRICULA: number, SENHA: string) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL!}/user/login`,
-        {
-          MATRICULA_USER: MATRICULA,
-          PASSWORD_USER: SENHA,
-        }
-      );
+      const response = await axios.post(`186.148.230.186/user/login`, {
+        MATRICULA_USER: MATRICULA,
+        PASSWORD_USER: SENHA,
+      });
 
       if (response.data.TOKEN) {
         localStorage.setItem("user", JSON.stringify(response.data));
