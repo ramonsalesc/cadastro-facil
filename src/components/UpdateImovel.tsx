@@ -145,23 +145,20 @@ export default function AddImovel({
     console.log("singleimovel: ", singleSubscription);
     try {
       if (singleSubscription) {
-        await axios.patch(
-          `${process.env.REACT_APP_API_URL!}/imovel/${imovel.MATRICULA}`,
-          {
-            MATRICULA: imovel.MATRICULA,
-            LOCALIDADE: imovel.LOCALIDADE,
-            SETOR: parseInt(setor),
-            ROTA: parseInt(rota),
-            QUADRA: parseInt(quadra),
-            SEGMENTO: parseInt(segmento),
-            LOTE: parseInt(lote),
-            SUBLOTE: parseInt(sublote),
+        await axios.patch(`http://localhost:5000/imovel/${imovel.MATRICULA}`, {
+          MATRICULA: imovel.MATRICULA,
+          LOCALIDADE: imovel.LOCALIDADE,
+          SETOR: parseInt(setor),
+          ROTA: parseInt(rota),
+          QUADRA: parseInt(quadra),
+          SEGMENTO: parseInt(segmento),
+          LOTE: parseInt(lote),
+          SUBLOTE: parseInt(sublote),
 
-            ID_LOGRADOURO: imovel.ID_LOGRADOURO,
-          }
-        );
+          ID_LOGRADOURO: imovel.ID_LOGRADOURO,
+        });
         await axios.patch(
-          `${process.env.REACT_APP_API_URL!}/endereco/${imovel.MATRICULA}`,
+          `http://localhost:5000/endereco/${imovel.MATRICULA}`,
           {
             BAIRRO: bairro,
             CEP: cep,

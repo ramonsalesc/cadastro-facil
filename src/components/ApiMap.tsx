@@ -65,7 +65,7 @@ export default function ApiMap() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
 
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || "",
+    googleMapsApiKey: "AIzaSyARiGeC05nAA7_hvpQP0OwiXm6Ujo8f2z0",
     libraries: librarie1,
   });
 
